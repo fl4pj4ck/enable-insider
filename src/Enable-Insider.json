@@ -1,0 +1,96 @@
+{
+    "common": {
+        "required_features": {
+            "base": [
+                "Microsoft-Windows-Subsystem-Linux",
+                "NetFx4-AdvSrvs",
+                "DirectoryServices-ADAM-Client",
+                "Containers-DisposableClientVM"
+            ],
+            "iot_enterprise": [
+                "Microsoft-Windows-Subsystem-Linux",
+                "NetFx4-AdvSrvs",
+                "DirectoryServices-ADAM-Client"
+            ],
+            "ltsc": [
+                "Microsoft-Windows-Subsystem-Linux",
+                "NetFx4-AdvSrvs",
+                "DirectoryServices-ADAM-Client"
+            ]
+        },
+        "insider_settings": {
+            "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WindowsUpdate\\Orchestrator": {
+                "EnableUUPScan": { "Value": 1, "Type": "DWord" }
+            },
+            "HKLM:\\SOFTWARE\\Microsoft\\WindowsSelfHost\\Applicability": {
+                "EnablePreviewBuilds": { "Value": 2, "Type": "DWord" },
+                "IsBuildFlightingEnabled": { "Value": 1, "Type": "DWord" },
+                "IsConfigSettingsFlightingEnabled": { "Value": 1, "Type": "DWord" },
+                "TestFlags": { "Value": 32, "Type": "DWord" },
+                "RingId": { "Value": 11, "Type": "DWord" },
+                "Ring": { "Value": "External", "Type": "String" },
+                "ContentType": { "Value": "%CONTENTTYPE%", "Type": "String" },
+                "BranchName": { "Value": "%CHANNEL%", "Type": "String" }
+            },
+            "HKLM:\\SOFTWARE\\Microsoft\\WindowsSelfHost\\UI\\Selection": {
+                "UIRing": { "Value": "External", "Type": "String" },
+                "UIContentType": { "Value": "%CONTENTTYPE%", "Type": "String" },
+                "UIBranch": { "Value": "%CHANNEL%", "Type": "String" },
+                "UIOptin": { "Value": 1, "Type": "DWord" }
+            },
+            "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection": {
+                "AllowTelemetry": { "Value": 3, "Type": "DWord" }
+            },
+            "HKLM:\\SOFTWARE\\Microsoft\\WindowsSelfHost\\UI\\Strings": {
+                "StickyXaml": {
+                    "Value": "<StackPanel xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\">This device has been enrolled to the Windows Insider program using Enable-Insider v%scriptver%. If you want to change settings of the enrollment or stop receiving Insider Preview builds,(Download Windows 11 at https://bit.ly/Windows-11-ISO2021) please use the script. <Hyperlink NavigateUri=\"https://github.com/Jathurshan-2019/Insider-Enroller\" TextDecorations=\"None\">Learn more</Hyperlink></TextBlock><TextBlock Text=\"Applied configuration\" Margin=\"0,20,0,10\" Style=\"{StaticResource SubtitleTextBlockStyle}\" /><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\" Margin=\"0,0,0,5\"><Run FontFamily=\"Segoe MDL2 Assets\">&#xECA7;</Run> <Span FontWeight=\"SemiBold\">%Fancy%</Span></TextBlock><TextBlock Text=\"Channel: %Channel% Channel\" Style=\"{StaticResource BodyTextBlockStyle }\" /><TextBlock Text=\"Content: %Content%\" Style=\"{StaticResource BodyTextBlockStyle }\" /><TextBlock Text=\"Telemetry settings notice\" Margin=\"0,20,0,10\" Style=\"{StaticResource SubtitleTextBlockStyle}\" /><TextBlock Style=\"{StaticResource BodyTextBlockStyle }\">Windows Insider Program requires your diagnostic data collection settings to be set to <Span FontWeight=\"SemiBold\">Full</Span>. You can verify or modify your current settings in <Span FontWeight=\"SemiBold\">Diagnostics &amp; feedback</Span>.</TextBlock><Button Command=\"{StaticResource ActivateUriCommand}\" CommandParameter=\"ms-settings:privacy-feedback\" Margin=\"0,10,0,0\"><TextBlock Margin=\"5,0,5,0\">Open Diagnostics &amp; feedback</TextBlock></Button></StackPanel>",
+                    "Type": "String"
+                }
+            }
+        },
+        "telemetry": {
+            "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection": {
+                "AllowTelemetry": { "Value": 3, "Type": "DWord" },
+                "MaxTelemetryAllowed": { "Value": 3, "Type": "DWord" }
+            },
+            "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection": {
+                "AllowTelemetry": { "Value": 3, "Type": "DWord" }
+            },
+            "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Diagnostics\\DiagTrack": {
+                "DiagTrackAuthorization": { "Value": 16319, "Type": "DWord" }
+            }
+        },
+        "edition_settings": {
+            "professional_upgrade": {
+                "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WindowsUpdate": {
+                    "EditionId": { "Value": "Professional", "Type": "String" }
+                }
+            }
+        }
+    },
+    "windows10": {
+        "base": {
+            "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System": {
+                "EnableLUA": { "Value": 1, "Type": "DWord" }
+            }
+        },
+        "ltsc": {
+            "HKLM:\\SOFTWARE\\Microsoft\\WindowsSelfHost\\Applicability": {
+                "EnablePreviewBuilds": { "Value": 2, "Type": "DWord" },
+                "IsBuildFlightingEnabled": { "Value": 1, "Type": "DWord" },
+                "IsConfigSettingsFlightingEnabled": { "Value": 1, "Type": "DWord" },
+                "TestFlags": { "Value": 32, "Type": "DWord" },
+                "RingId": { "Value": "%CHANNEL%", "Type": "String" },
+                "Ring": { "Value": "%CHANNEL%", "Type": "String" },
+                "ContentType": { "Value": "%CONTENTTYPE%", "Type": "String" }
+            }
+        }
+    },
+    "windows11": {
+        "base": {
+            "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System": {
+                "EnableLUA": { "Value": 1, "Type": "DWord" }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+# PowerShell
+*.pssproj
+*.ps1xml
+
+# Backup files
+backup.json
+
+# Windows
+Thumbs.db
+desktop.ini
